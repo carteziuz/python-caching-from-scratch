@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-caching-from-scratch"
+version = "0.1.0"
+description = "A deep-dive architectural study of concurrent in-memory caching in Python."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Rene L", email = "jrenesleite@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# Tools for active development and benchmarking
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/carteziuz/python-caching-from-scratch"
+Issues = "https://github.com/carteziuz/python-caching-from-scratch/issues"
