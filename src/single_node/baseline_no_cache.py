@@ -1,5 +1,6 @@
 from typing import Any, Optional
-from base_cache import BaseCache
+
+from single_node import BaseCache
 
 
 class NoCache(BaseCache):
