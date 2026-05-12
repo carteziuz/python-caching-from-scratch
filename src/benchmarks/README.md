@@ -1,8 +1,10 @@
 # Benchmark Results: Systemic I/O Shielding
 
-The following benchmark demonstrates the macro-level impact of introducing an in-memory caching layer in front of simulated external I/O (e.g., database queries, network requests) under highly concurrent workloads.
+The following benchmark demonstrates the macro-level impact of introducing an in-memory caching layer in front of
+simulated external I/O (e.g., database queries, network requests) under highly concurrent workloads.
 
 ## Execution Environment
+
 * **Threads:** 16
 * **Total Requests:** 1600 (100 per thread)
 * **Workload Distribution:** Zipfian (s=1) representing a high-contention 80/20 power-law access pattern.
