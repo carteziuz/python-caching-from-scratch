@@ -1,5 +1,6 @@
 from .base_cache import BaseCache
 from .baseline_no_cache import NoCache
 from .global_lock_cache import GlobalLockCache
+from .sharded_cache import ShardedLRU
 
-__all__ = ["BaseCache", "GlobalLockCache", "NoCache"]
+__all__ = ["BaseCache", "GlobalLockCache", "NoCache", "ShardedLRU"]
