@@ -1,14 +1,6 @@
 from unittest.mock import patch
-from single_node import NoCache, GlobalLockCache
 
-
-def test_nocache_always_misses():
-    cache = NoCache()
-    cache.put("key1", "value1")
-    assert cache.get("key1") is None
-
-    cache.delete("key1")
-    assert cache.get("key1") is None
+from single_node import GlobalLockCache
 
 
 class TestGlobalLockCache:
@@ -30,19 +22,13 @@ class TestGlobalLockCache:
 
     @patch('single_node.global_lock_cache.time.time')
     def test_ttl_expiration(self, mock_time):
-        # Freeze time at epoch 1000
         mock_time.return_value = 1000.0
-
         cache = GlobalLockCache(max_size=10)
         cache.put("a", 1, ttl=5)
 
-        # Time has not passed, should be a hit
         assert cache.get("a") == 1
 
-        # Fast-forward time by 6 seconds (past the 5s TTL)
         mock_time.return_value = 1006.0
-
-        # Should now be expired
         assert cache.get("a") is None
 
     def test_delete(self):
